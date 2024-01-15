@@ -37,7 +37,7 @@ if __name__=='__main__':
         tmp_df = get_data_example(server=server)
         df1 = pd.concat([df1, tmp_df])
     end_time = time()
-    print(f'for loop duration: {(end_time-start_time):.4f}s')
+    print(f'for loop duration: {(end_time-start_time):.4f}s') # for loop duration: 4.3579s
 
     # new way: use parallel computing functionality of dask package to run each small batch at once
     # the number of tasks being run by dask depends on how many logical processors your CPU has. 8 in this example
@@ -45,4 +45,4 @@ if __name__=='__main__':
     values = [dask.delayed(get_data_example)(server=server) for server in servers] 
     df2 = pd.concat(dask.compute(*values, scheduler='threads'))
     end_time = time()
-    print(f'dask duration: {(end_time-start_time):.4f}s')
+    print(f'dask duration: {(end_time-start_time):.4f}s') # dask duration: 1.6560s
