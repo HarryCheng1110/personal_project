@@ -15,4 +15,4 @@ I recently wrote a code where it gets and transform data from yesterday and save
 
 This example contains very roughly how my actual code in work processes since I can't really show it. And below is the graph on Airflow showing the dependencies.
 
-![image](screenshot\airflow_dag.png)
+![image](https://raw.githubusercontent.com/HarryCheng1110/personal_project/main/screenshot/airflow_dag.png)
